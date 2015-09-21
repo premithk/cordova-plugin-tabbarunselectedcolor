@@ -17,7 +17,7 @@
     if (tabBarController == nil)
     {
         CDVPluginResult* presult = [CDVPluginResult
-                               resultWithStatus:CDVCommandStatus_OK
+                               resultWithStatus:CDVCommandStatus_ERROR
                                messageAsString:@"Error"];
 
         [self.commandDelegate sendPluginResult:presult callbackId:callbackId];
