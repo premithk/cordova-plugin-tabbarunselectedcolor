@@ -39,6 +39,14 @@
     }
 }
 
+- (void) setBottomPadding:(CDVInvokedUrlCommand*)command;
+{
+    NSString* callbackId = [command callbackId];
+    NSString* padding = [[command arguments] objectAtIndex:0];
+    CGFloat * verticaloffset = [padding floatValue];
+    CGFloat * verticaloffsetn = verticaloffset * -1;
+    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0.0, verticaloffsetn)];
+}
 
 - (UIColor*)colorStringToColor:(NSString*)hexString
 {

@@ -3,5 +3,6 @@
 
 @interface CDVTabBarUnselected : CDVPlugin
 - (void) setColorforUnselected:(CDVInvokedUrlCommand*)command;
+- (void) setBottomPadding:(CDVInvokedUrlCommand*)command;
 - (UIColor*)colorStringToColor:(NSString*)colorStr;
 @end
