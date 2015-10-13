@@ -2,28 +2,21 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="com.sdl.TabBarUnselected"
         version="0.5.0">
-
   <name>CDVTabBarUnselected</name>
-  
   <asset src="www/tabbarunselected.js" target="tabbarunselected.js" />
-
   <js-module src="www/tabbarunselected.js" name="TabBarUnselected">
     <clobbers target="tabbarunselected" />
   </js-module>
-
   <platform name="ios">
-
     <config-file target="config.xml" parent="/*">
       <feature name="CDVTabBarUnselected">
         <param name="ios-package" value="CDVTabBarUnselected" />
       </feature>
        <plugin name="CDVTabBarUnselected" value="CDVTabBarUnselected"/>
     </config-file>
-
     <header-file src="src/ios/CDVTabBarUnselected.h" target-dir="TabBarUnselectedPlugin"/>
     <source-file src="src/ios/CDVTabBarUnselected.m" target-dir="TabBarUnselectedPlugin"/>
     <header-file src="src/ios/UIImage+Overlay.h" target-dir="TabBarUnselectedPlugin"/>
     <source-file src="src/ios/UIImage+Overlay.m" target-dir="TabBarUnselectedPlugin"/>
-
   </platform>
 </plugin>

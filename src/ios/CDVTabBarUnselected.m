@@ -11,31 +11,24 @@
 {
     NSString* callbackId = [command callbackId];
     NSString* color = [[command arguments] objectAtIndex:0];
-    
     UITabBarController *tabBarController = (UITabBarController *)self.viewController.tabBarController;
-    
     if (tabBarController == nil)
     {
         CDVPluginResult* presult = [CDVPluginResult
                                resultWithStatus:CDVCommandStatus_ERROR
                                messageAsString:@"Error"];
-
         [self.commandDelegate sendPluginResult:presult callbackId:callbackId];
-
         NSLog(@"Error- No Tab Controller Found"); 
     }
     else
     {
         UITabBar *tabBar = tabBarController.tabBar;
-        
         if (tabBar == nil)
             NSLog(@"Error- No Tab Bar Found"); 
-
         UIColor * unselectedColor = [self colorStringToColor:color];
         for(UITabBarItem *item in tabBar.items) {
             item.image = [[item.selectedImage imageWithColor:unselectedColor] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         }
-
     }
 }
 
@@ -56,6 +49,28 @@
     [scanner scanHexInt:&rgbValue];
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
+
+
+
+- (void) disableScroll:(CDVInvokedUrlCommand*)command {
+    if (!command.arguments || ![command.arguments count]){
+      return;
+    }
+    id value = [command.arguments objectAtIndex:0];
+    if (value != [NSNull null]) {
+       BOOL disableScroll = [value boolValue];
+       if (disableScroll) {
+            self.webView.scrollView.scrollEnabled = NO;
+            self.webView.scrollView.delegate = self;
+        }
+      else {
+            self.webView.scrollView.scrollEnabled = YES;
+            self.webView.scrollView.delegate = nil;
+        }
+
+    }
+}
+
 
 @end
 
