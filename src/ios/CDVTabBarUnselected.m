@@ -32,7 +32,7 @@
     }
 }
 
-- (void) setBottomPadding:(CDVInvokedUrlCommand*)command;
+- (void) setBottomPadding:(CDVInvokedUrlCommand*)command
 {
     NSString* callbackId = [command callbackId];
     NSString* padding = [[command arguments] objectAtIndex:0];
@@ -61,11 +61,9 @@
        BOOL disableScroll = [value boolValue];
        if (disableScroll) {
             self.webView.scrollView.scrollEnabled = NO;
-            self.webView.scrollView.delegate = self;
         }
       else {
             self.webView.scrollView.scrollEnabled = YES;
-            self.webView.scrollView.delegate = nil;
         }
 
     }
