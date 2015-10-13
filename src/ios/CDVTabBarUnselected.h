@@ -5,5 +5,5 @@
 - (void) setColorforUnselected:(CDVInvokedUrlCommand*)command;
 - (void) setBottomPadding:(CDVInvokedUrlCommand*)command;
 - (UIColor*)colorStringToColor:(NSString*)colorStr;
-- (void) disableScroll:(CDVInvokedUrlCommand*)command;
+- (void) disableScrollforKeyboard:(CDVInvokedUrlCommand*)command;
 @end

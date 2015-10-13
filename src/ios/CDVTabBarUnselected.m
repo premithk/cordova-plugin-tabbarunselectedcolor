@@ -52,7 +52,8 @@
 
 
 
-- (void) disableScroll:(CDVInvokedUrlCommand*)command {
+- (void) disableScrollforKeyboard:(CDVInvokedUrlCommand*)command 
+{
     if (!command.arguments || ![command.arguments count]){
       return;
     }
