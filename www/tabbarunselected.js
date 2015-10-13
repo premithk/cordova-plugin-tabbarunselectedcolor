@@ -5,7 +5,7 @@ module.exports = {
     setBottomPadding: function (padding, successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, "CDVTabBarUnselected", "setBottomPadding", [padding]);
     },
-    disableScrollforKeyboard = function(disable) {
+    disableScrollforKeyboard:function(disable) {
     	cordova.exec(null, null, "CDVTabBarUnselected", "disableScrollforKeyboard", [disable]);
 	}
 };
