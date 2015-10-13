@@ -7,6 +7,6 @@ module.exports = {
     },
     disableScroll = function(disable) {
     	cordova.exec(null, null, "CDVTabBarUnselected", "disableScrollforKeyboard", [disable]);
-	};
+	}
 
 };
