@@ -1,5 +1,5 @@
 # cordova-plugin-tabbarunselectedcolor
-# The Plugin is suitable for the Appgyver Projects
+# The Plugin only makes sense for Appgyver Projects. http://www.appgyver.com/
 Plugin to set the colors of De-selected Tab bar items. (For Appgyver)
 ## Usage
 
